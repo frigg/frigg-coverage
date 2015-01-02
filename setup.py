@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='frigg-coverage',
-    version='0.2.0',
+    version='0.3.0',
     description='Coverage report reading util',
     author='The frigg team',
     author_email='hi@frigg.io',
