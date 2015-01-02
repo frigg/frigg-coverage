@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from frigg.coverage import parse_coverage
+from frigg_coverage import parse_coverage
 
 
 def test_parse_coverage():
