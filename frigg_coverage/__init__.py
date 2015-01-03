@@ -3,4 +3,6 @@ from .parsers import PARSERS
 
 
 def parse_coverage(path, parser):
-    return PARSERS[parser](path)
+    if parser in PARSERS:
+        return PARSERS[parser](path)
+    return NotImplemented
