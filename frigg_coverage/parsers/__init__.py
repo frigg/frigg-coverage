@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-
-from .python_coverage import parse_coverage_report as python_coverage
+from frigg_coverage.parsers import python_coverage, clover, cobertura
 
 PARSERS = {
-    'python': python_coverage
+    'python': python_coverage,
+    'clover': clover,
+    'cobertura': cobertura
 }
