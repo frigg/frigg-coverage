@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-import os
-from lxml import etree
+import xml.etree.ElementTree as ET
 
 
-def parse_coverage_report(path):
-    if os.path.exists(path):
-        with open(path) as f:
-            report = etree.parse(f)
-        return float(report.getroot().get('line-rate')) * 100
+def parse_coverage_report(string):
+    report = ET.fromstring(string)
+    return float(report.get('line-rate')) * 100

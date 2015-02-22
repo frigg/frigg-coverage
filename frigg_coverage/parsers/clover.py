@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-import os
 from decimal import Decimal
-from lxml import etree
+import xml.etree.ElementTree as ET
 
 
-def parse_coverage_report(path):
-    if os.path.exists(path):
-        with open(path) as f:
-            report = etree.parse(f)
-            covered = int(report.getroot().find('project').find('metrics').get('coveredstatements'))
-            statements = int(report.getroot().find('project').find('metrics').get('statements'))
-        return float(round(Decimal(covered / statements) * 100, 2))
+def parse_coverage_report(string):
+    report = ET.fromstring(string)
+    metrics = report.find('project').find('metrics')
+    covered = int(metrics.get('coveredstatements'))
+    statements = int(metrics.get('statements'))
+    return float(round(Decimal(covered / statements) * 100, 2))
