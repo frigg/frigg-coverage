@@ -1,29 +1,17 @@
 # -*- coding: utf-8 -*-
-import os
-import re
 from .parsers import PARSERS
 
 
-def parse_coverage(path_or_string, parser):
+def parse_coverage(coverage_report, parser):
     """
-    :param path_or_string: A path to an coverage fil or string with the contents of a coverage file
-    :param parser: String with name of the parser to use
+    :param coverage_report: A string with the contents of a coverage file
+    :type coverage_report: String
+    :param parser: A string with name of the parser to use
+    :type parser: String
     :return: Total coverage
     """
-    if re.match(r'^(/)?([^/\0]+(/)?)+$', path_or_string):
-        if not os.path.isabs(path_or_string):
-            path_or_string = os.path.join(os.getcwd(), path_or_string)
-
-        if os.path.exists(path_or_string):
-            with open(path_or_string) as f:
-                string = f.read()
-        else:
-            string = None
-    else:
-        string = path_or_string
-
     if parser in PARSERS:
-        if string:
-            return PARSERS[parser].parse_coverage_report(string)
+        if coverage_report:
+            return PARSERS[parser].parse_coverage_report(coverage_report)
         return None
     return NotImplemented
