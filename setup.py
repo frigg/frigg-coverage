@@ -11,9 +11,6 @@ setup(
     url='https://github.com/frigg/frigg-coverage',
     packages=find_packages(exclude=['tests', 'tests.*']),
     include_package_data=True,
-    install_requires=[
-        'lxml'
-    ],
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
