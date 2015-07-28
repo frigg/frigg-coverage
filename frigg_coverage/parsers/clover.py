@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from decimal import Decimal
 import xml.etree.ElementTree as ET
+from decimal import Decimal
 
 
 def parse_coverage_report(string):
