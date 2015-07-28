@@ -1,9 +1,18 @@
 # -*- encoding: utf-8 -*-
+import re
+
 from setuptools import setup, find_packages
+
+with open('frigg_coverage/__init__.py', 'r') as fd:
+    version = re.search(
+        r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
+        fd.read(),
+        re.MULTILINE
+    ).group(1)
 
 setup(
     name='frigg-coverage',
-    version='1.1.0',
+    version=version,
     description='Coverage report reading util',
     author='The frigg team',
     author_email='hi@frigg.io',
