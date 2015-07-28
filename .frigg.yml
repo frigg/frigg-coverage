@@ -3,6 +3,7 @@ tasks:
  - tox -e isort
  - tox -e py34
  - tox -e py27
+ - coverage xml
 
 coverage:
  path: coverage.xml
