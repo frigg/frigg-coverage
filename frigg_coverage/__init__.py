@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from .parsers import PARSERS
 
-__version__ = '1.1.0'
+__version__ = '1.1.1'
 
 
 def parse_coverage(coverage_report, parser):
