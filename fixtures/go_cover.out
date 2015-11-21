@@ -1,0 +1,3 @@
+?   	github.com/tiborv/hilbert-gis	[no test files]
+ok  	github.com/tiborv/hilbert-gis/geo	0.020s	coverage: 80.0% of statements
+ok  	github.com/tiborv/hilbert-gis/tree	0.047s	coverage: 78.2% of statements
