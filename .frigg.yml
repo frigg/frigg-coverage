@@ -1,9 +1,16 @@
 tasks:
- - tox -e flake8
- - tox -e isort
- - tox -e py35
- - tox -e py27
- - tox -e coverage
+ tests:
+  - tox -e flake8
+  - tox -e isort
+  - tox -e py35
+  - tox -e py27
+  - tox -e coverage
+ after_success:
+  - git config --global user.name "semantic-release"
+  - git config --global user.email "semantic-release@frigg"
+  - pip3 install python-semantic-release
+  - semantic-release publish
+
 
 coverage:
  path: coverage.xml
